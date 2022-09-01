@@ -1,115 +1,114 @@
 interface version{
  version:string,
- release_date:string,
- bugs:string,
+ releaseDate:string,
+ bugID:string,
  feature:string,
  app:string,
  author:string,
  type:string
  }
- const software_UPDATES=[
+ const latestUpdates=[
  {
- version:'2.2.1',
- release_date:'2021',
- bugs:"crashing",
- feature:"karaoke mode",
+ version:'4.2.1',
+ releaseDate:'2021',
+ bugID:"#2345",
+ feature:"listen the songs in offline",
  app:"spoyify",
  author:["simran","joethika"],
  type:"major"
 
  },
  {
- version:'3.0',
- release_date:'2022',
- bugs:"call ID issue",
- feature:"introducing to action calls",
- app:"truecaller",
+ version:'3.9',
+ releaseDate:'2022',
+ bugID:"#1234",
+ feature:"3d avathar",
+ app:"snapchat",
  author:"joethika",
  type:"major"
 
  },
  {
  version:'4.1',
- release_date:'2022',
- bugs:"video freeze",
- feature:"icons get new look",
+ releaseDate:'2022',
+ bugID:"#9790",
+ feature:"double thumbs up",
  app:"netflix",
  author:"nithya",
  type:"major" 
  },
  {
  version:'3.3',
- release_date:'2021',
- bugs:'voice call error',
- feature:"admin msg control",
- app:"whatsapp",
+ releaseDate:'2021',
+ bugID:'#9025',
+ feature:"videocall with 8 person",
+ app:"Google Doc",
  author:"raji",
- type:"match enhancement"
+ type:"major"
  },
  {
  version:'4.5',
- release_date:'2022',
- bugs:'crashing',
- feature:"react over msg",
+ releaseDate:'2022',
+ bugID:'#4990',
+ feature:"gifstickers",
  app:"whatsapp",
  author:"madhumitha",
  type:"match enhancement"
  },
  { version:'4.7',
- release_date:'2022',
- bugs:'videocall crashing',
+ releaseDate:'2022',
+ bugID:'#9060',
  feature:"create your own awathar",
  app:"instagram",
  author:"sindhuja",
  type:"match enhancement"
  }]
- console.table(software_UPDATES)
+ console.table(latestUpdates)
 
- function searchbyyear(year:any){
- var count_UPDATES=software_UPDATES.filter(n=>n.release_date.includes(year))
- console.log(`${count_UPDATES.length} "versions came in the year of ${year}`)
- console.log(count_UPDATES)
+ function findYear(year:any){
+ var counting=latestUpdates.filter(n=>n.releaseDate.includes(year))
+ console.log(`"how many release made in this year?"
+  ${counting.length} "versions came in the year of ${year}`)
+ console.log(counting)
  }
- console.table(searchbyyear(2022))
- console.log('__________________________________________________________________________________________________________________________')
+ console.table(findYear(2022))
  console.log('***************************************************************************************************************************')
- console.log('__________________________________________________________________________________________________________________________')
- function searchbyauthor(name:any){
- var count_AUTHOR=software_UPDATES.filter(n=>n.author.includes(name))
- console.log(`"${name} is the one who launched ${count_AUTHOR.length} times software updates `)
- console.log(count_AUTHOR)
+ function findAuthor(name:any){
+ var countAuthor=latestUpdates.filter(n=>n.author.includes(name))
+ console.log(`"which author has worked in many release?"
+ ${name} is the only author who worked ${countAuthor.length} times in software updates `)
+ console.log(countAuthor)
  }
- console.table(searchbyauthor('joethika'))
- console.log('__________________________________________________________________________________________________________________________')
+ console.table(findAuthor('joethika'))
+
  console.log("***********************************************************************************************************************")
- console.log('__________________________________________________________________________________________________________________________')
-  function searchbyapp(app:any){
- var application=software_UPDATES.filter(n=>n.app.includes(app))
- console.log(`"application which have latest version${app}  `)
- console.log(application)
+
+  function findBugID(bugID:any){
+ var bugs=latestUpdates.filter(n=>n.bugID.includes(bugID))
+ console.log(`"In which release specific bugID is present?
+         bugID ${bugID} released in 2022`)
+ console.log(bugs)
   }
-//  console.log('__________________________________________________________________________________________________________________________')
- console.table(searchbyapp('instagram'))
- console.log('__________________________________________________________________________________________________________________________')
- console.table('major')
 
- function searchbyversion(version:any){
- var version_FORSOFTWARE=software_UPDATES.filter(n=>n.version.includes(version))
- console.log(`"the software which having ${version}version `)
- console.log(version_FORSOFTWARE)
- }
- console.table(searchbyversion(4.1))
+ console.table(findBugID('#9060'))
  console.log('__________________________________________________________________________________________________________________________')
+ console.table('match enhancement')
+
+ function findFeatures(version:any){
+ var softwareUpdatedVersion=latestUpdates.filter(n=>n.feature.includes(version))
+ console.log(`${softwareUpdatedVersion.length} "software which having ${version} feature `)
+ console.log(softwareUpdatedVersion)
+ }
+ console.table(findFeatures('gifsticker'))
+
  console.log("*************************************************************************************************************************")
- console.log('__________________________________________________________________________________________________________________________')
- function searchbytype(type:any){
- var type_OFSOFTWARE=software_UPDATES.filter(n=>n.type.includes(type))
- console.log(`"the software which having ${type} type `)
- console.log(type_OFSOFTWARE)
+ 
+ 
+  function findType(type:any){
+ var softwareType=latestUpdates.filter(n=>n.type.includes(type))
+ console.log(`"  the software which having ${type} type `)
+ console.log(softwareType)
  }
  console.log('__________________________________________________________________________________________________________________________')
- console.table(searchbytype('match enhancement'))
- console.log('__________________________________________________________________________________________________________________________')
- console.table(searchbytype('major')) 
-
+findType('major')
 
